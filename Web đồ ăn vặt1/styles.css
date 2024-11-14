@@ -252,7 +252,7 @@ font-family: calc(),sans-serif;
     display: none;
     padding: 10px 0;
     z-index: 1000;
-    width: 120px;
+    width: 150px;
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -343,6 +343,19 @@ font-family: calc(),sans-serif;
     width: 90%;
     display: flex;
     justify-content: space-between;
+}
+button {
+    background: linear-gradient(to right, #ff7e5f, #ff5722);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(to right, #ff5722, #e64a19);
 }
 .slider .buttons button{
     width: 50px;
