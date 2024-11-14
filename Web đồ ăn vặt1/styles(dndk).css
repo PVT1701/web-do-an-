@@ -291,6 +291,19 @@ font-family: calc(),sans-serif;
 .user-menu li:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
+button {
+  background: linear-gradient(to right, #ff7e5f, #ff5722);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(to right, #ff5722, #e64a19);
+}
 .dropdown-menu {
   display: none;
   position: absolute;
