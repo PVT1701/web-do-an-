@@ -5,6 +5,7 @@
 }
 body {
 font-family: calc(),sans-serif;
+background-color: #fbead4;
 }
 
 .header {
@@ -85,7 +86,7 @@ font-family: calc(),sans-serif;
 }
 
 .footer {
-    background-color: #fdf3e7;
+    background-color: #333;
     padding: 40px;
 }
 
@@ -116,7 +117,7 @@ font-family: calc(),sans-serif;
     justify-content: center;
     margin-top: 20px;
     gap: 40px;
-    color: #333;
+    color: #f8eded;
     font-size: 14px;
 }
 .footer .footer-links div {
@@ -127,7 +128,7 @@ font-family: calc(),sans-serif;
     font-weight: bold;
 }
 .footer .footer-links a {
-    color: #333;
+    color: #f8eded;
     text-decoration: none;
 }
 .footer .footer-links a:hover {
@@ -138,7 +139,7 @@ font-family: calc(),sans-serif;
 }
 .footer .contact-info p {
     margin: 5px 0;
-    color: #555;
+    color: #f8eded;
 }
 .back-to-top {
     position: fixed;
@@ -159,20 +160,20 @@ font-family: calc(),sans-serif;
 
 .contact-section {
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #f8eded;
     margin: 20px;
 }
 .contact-section h4 {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #f8eded;
 }
 .contact-item {
     display: flex;
     align-items: center;
     margin: 10px 0;
     font-size: 16px;
-    color: #0a0a0a;
+    color: #f8eded;
 }
 .contact-item img {
     width: 20px;
@@ -181,7 +182,7 @@ font-family: calc(),sans-serif;
     filter: invert(34%) sepia(93%) saturate(4299%) hue-rotate(1deg) brightness(94%) contrast(101%);
 }
 .contact-item a {
-    color: #333;
+    color: #f8eded;
     text-decoration: none;
 }
 .contact-item a:hover {
@@ -437,6 +438,29 @@ button:hover {
     text-align: center;
     color: #c05f19;
 }
+.sanpham{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 0px;
+}
+.image-sp{
+    text-align: center;
+    color: #7b3a0b;
+}
+.image-sp img{
+    width: 350px;
+    height: 280px;
+    border-radius: 10px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+.image-sp img:hover{
+    transform: scale(1.1); /* Phóng to hình ảnh 10% */
+}
+.image-sp p{
+    margin-top: 10px;
+}
 .bbody{
     text-align: justify;
     align-items: center;
@@ -515,10 +539,10 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: rgb(207, 203, 203);
     font-size: 24px;
     font-weight: bold;
-    background-color: rgba(39, 38, 38, 0.5); /* Màu nền đen mờ */
+    background-color: transparent; /* Nền trong suốt */
     padding: 10px 20px;
     border-radius: 8px;
 }
