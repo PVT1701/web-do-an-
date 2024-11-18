@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="styles(LH).css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="logo">
+            <img src="image\icon\logo.png" alt="Logo">
+            <span></span>
+        </div>
+        <nav class="nav">
+            <ul class="nav-menu">
+                <li><a href="Trang chủ.html">Trang Chủ</a></li>
+                <li><a href="gioithieu.html">Giới Thiệu</a></li>
+                <li class="dropdown">
+                    <a href="sanpham.html">Sản Phẩm</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Combo Best Seller</a></li>
+                        <li><a href="#">Combo Mix</a></li>
+                        <li><a href="#">Combo Thịt Khô</a></li>
+                        <li><a href="#">Combo Snack + Quẩy</a></li>
+                        <li><a href="#">Các Sản Phẩm Lẻ</a></li>
+                        <li><a href="#">Sản Phẩm Mới</a></li>
+                    </ul>
+                </li>
+                <li><a href="tintuc.html">Tin Tức</a></li>
+                <li><a href="lienhe.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <div class="nav-container">
+                <!-- Icon tìm kiếm -->
+                <div class="search-bar">
+                  <button class="search-icon" onclick="toggleSearch()">
+                    <i class="fa-solid fa-search"></i>
+                  </button>
+                  <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                </div>
+            
+                <!-- Icon người dùng -->
+                <div class="user-container">
+                  <div class="user-bar">
+                    <button class="user-icon" onclick="toggleMenu()">
+                      <i class="fa-solid fa-user"></i>
+                    </button>
+                    <ul class="user-menu">
+                      <li><a href="dangnhap.html">Đăng Nhập</a></li>
+                      <li><a href="dangky.html">Đăng Ký</a></li>
+                    </ul>        
+                  </div>
+                </div>
+                 <!-- Icon giỏ hàng -->
+                 <div class="shopee-container">
+                    <div class="shopee-bar">
+                        <button class="shopee-icon">
+                            <a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cart-count">0</span>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </header>
+        <div class="breadcrumb-section">
+        <h1>Combo Best Saller</h1>
+        <div class="breadcrumb">
+            <a href="Trang chủ.html">Trang chủ</a>
+            <span>></span>
+            <a href="sanpham.html" class="current">Sản phẩm</a>
+            <span>></span>
+            <a href="combobestsaller.html" class="current">Combo best saller</a>
+        </div>
+    </div>
+    <div class="product-filter">
+        <h2>Sắp xếp theo:</h2>
+        <div class="sort-options">
+            <label><input type="radio" name="sort" value="new"> Hàng mới về</label>
+            <label><input type="radio" name="sort" value="old"> Hàng cũ nhất</label>
+            <label><input type="radio" name="sort" value="price-asc"> Giá tăng dần</label>
+            <label><input type="radio" name="sort" value="price-desc"> Giá giảm dần</label>
+        </div>
+    </div>
+    <div class="sanpham">
+        <div class="image-sp">
+            <img src="image/best7.png" alt="sp1"><br>
+            <p class="ndsp">COMBO HỦY DIỆT ĐẤU TRƯỜNG</p>
+            <p class="ndsp">189.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO HỦY DIỆT ĐẤU TRƯỜNG', 189000, 'best7.png')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="image-sp">
+            <img src="image/best8.png" alt="sp1"><br>
+            <p class="ndsp">COMBO : NỘ LONG CƯỚC</p>
+            <p class="ndsp">159.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO : NỘ LONG CƯỚC - Gồm 6 món ăn vặt đỉnh cao', 159000, 'best8.png')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="image-sp">
+            <img src="image/best9.png" alt="sp1"><br>
+            <p class="ndsp">COMBO KHỔNG LỒ HOÁ</p>
+            <p class="ndsp">159.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO KHỔNG LỒ HOÁ', 159000, 'best9.png')">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+    <div class="sanpham">
+        <div class="image-sp">
+            <img src="image/best10.png" alt="sp1"><br>
+            <p class="ndsp">COMBO SÓNG THẦN</p>
+            <p class="ndsp">179.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO SÓNG THẦN : 30 Gói Nem Nướng, 40 Gói T.Dừa, 1 Hộp Bánh Quy Que Tăm Tặng Thêm 12 Gói Đùi Bò Quay', 179000, 'best10.png')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="image-sp">
+            <img src="image/best11.png" alt="sp1"><br>
+            <p class="ndsp">COMBO TỐC HÀNH</p>
+            <p class="ndsp">169.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO TỐC HÀNH : Đùi gà Phô Mai khổng lồ + 15 gói Nem nướng phên + 15 Snack dải bò chay Tặng thêm 5 xúc xích ăn liền', 169000, 'best11.png')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="image-sp">
+            <img src="image/best13.png" alt="sp1"><br>
+            <p class="ndsp">COMBO TƯỜNG GIÓ</p>
+            <p class="ndsp">189.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO TƯỜNG GIÓ : 30 Nem nướng phên + 60 gói đùi bò quay', 189000, 'best13.png')">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+    <div class="sanpham">
+        <div class="image-sp">
+            <img src="image/best12.png" alt="sp1"><br>
+            <p class="ndsp">COMBO KHÔNG THỂ CẢN PHÁ</p>
+            <p class="ndsp">259.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO KHÔNG THỂ CẢN PHÁ', 259000, 'best12.png')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="image-sp">
+            <img src="image/best14.png" alt="sp1"><br>
+            <p class="ndsp">COMBO GIẢI PHÓNG</p>
+            <p class="ndsp">199.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO GIẢI PHÓNG : 1 bimbim mái tôn + 10 cá hồi + 30 nem nướng + 5 thạch yogurt', 199000, 'best14.png')">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="image-sp">
+            <img src="image/best15.png" alt="sp1"><br>
+            <p class="ndsp">COMBO ĐỈNH NÓC KỊCH TRẦN</p>
+            <p class="ndsp">199.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO ĐỈNH NÓC KỊCH TRẦN gồm 30 nem nướng phiên bản cay và 30 nem nướng phiên bản ít cay tặng thêm 20 gói thạch dừa tuổi thơ', 199000, 'best15.png')">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+    <div>
+        <ul class="pagination">
+            <li><a href="combobestsaller.html">1</a></li>
+            <li><a href="combobestsaller2.html">2</a></li>
+        </ul>
+    </div>
+    <div id="back-to-top">
+        <a href="#header" class="fa-solid fa-arrow-up">
+        </a>
+    </div>
+    <footer class="footer">
+        <!--
+        <div class="social-icons">
+            <img src="path/to/facebook-icon.png" alt="Facebook">
+            <img src="path/to/tiktok-icon.png" alt="TikTok">
+            <img src="path/to/youtube-icon.png" alt="YouTube">
+            <img src="path/to/shopee-icon.png" alt="Shopee">
+            <img src="path/to/instagram-icon.png" alt="Instagram">
+        </div>-->
+    
+        <div class="footer-links">
+            <div>
+                <h4>THỰC PHẨM TỐT NHẤT</h4>
+                <a href="#">Chi nhánh</a><br>
+                <a href="#">Hợp tác</a><br>
+                <a href="#">Sự kiện</a>
+            </div>
+            <div>
+                <h4>TIN TỨC</h4>
+                <a href="#">Về chúng tôi</a><br>
+                <a href="#">Liên hệ chúng tôi</a><br>
+                <a href="#">Đăng nhập</a><br>
+                <a href="#">Đăng ký</a><br>
+                <a href="#">Câu hỏi thường gặp</a>
+            </div>
+            <div>
+                <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
+                <div class="contact-item">
+                    <img src="image\icon\icon-address.png" alt="Location Icon">
+                    <a href="">Thái Bình</a>
+                </div>
+                <div class="contact-item">
+                    <img src="image\icon\icon-smart.png" alt="Phone Icon">
+                    <a href="tel:0789395327">0789395327</a>
+                </div>
+                <div class="contact-item">
+                    <img src="image\icon\icon-email.png" alt="Email Icon">
+                    <a href="mailto:pvtzzz1701@gmail.com">anlaghien8386@gmail.com</a>
+                </div>
+            </div>
+            <p>&copy; 2024 Web Đồ Ăn vặt. Được tạo bởi [Trà & Tuyên]</p>          
+        </div>
+            
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
