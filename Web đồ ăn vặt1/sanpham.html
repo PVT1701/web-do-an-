@@ -20,7 +20,7 @@
                 <li class="dropdown">
                     <a href="sanpham.html">Sản Phẩm</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Combo Best Seller</a></li>
+                        <li><a href="combobestsaller.html">Combo Best Seller</a></li>
                         <li><a href="#">Combo Mix</a></li>
                         <li><a href="#">Combo Thịt Khô</a></li>
                         <li><a href="#">Combo Snack + Quẩy</a></li>
@@ -58,7 +58,9 @@
                   <div class="shopee-container">
                     <div class="shopee-bar">
                         <button class="shopee-icon">
-                            <i><i class="fa-solid fa-cart-shopping"></i></i>
+                            <a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cart-count">0</span>
+                            </a>
                         </button>
                     </div>
     
@@ -83,43 +85,52 @@
             <label><input type="radio" name="sort" value="price-desc"> Giá giảm dần</label>
         </div>
     </div>
-    <div class="sanpham">
+    <div class="sanpham">  
         <div class="image-sp">
-            <img src="image/banh-gao-mat-ong.png" alt="sp1"><br>
-            <p class="ndsp">Bánh gạo mật ong</p>
-            <p class="ndsp">30.000đ</p>
+            <div class="product-container">
+                <img src="image/banh-gao-mat-ong.png" alt="sp1"><br>
+                <p class="ndsp">BÁNH GẠO MẬT ONG</p>
+                <p class="ndsp">30.000đ</p>
+                <button class="add-to-cart" onclick="addToCart('BÁNH GẠO MẬT ONG', 30000, 'banh-gao-mat-ong.png')">Thêm vào giỏ hàng</button>
+            </div>
         </div>
         <div class="image-sp">
-            <img src="image/tra-sua-dai-bo.png" alt="sp1"><br>
-            <p class="ndsp">COMBO TRÀ SỮA PHA LIỀN +30 DẢI BÒ</p>
-            <p class="ndsp">300.000đ</p>
+            <div class="product-container">
+                <img src="image/tra-sua-dai-bo.png" alt="sp1"><br>
+                <p class="ndsp">COMBO TRÀ SỮA PHA LIỀN +30 DẢI BÒ</p>
+                <p class="ndsp">300.000đ</p>
+                <button class="add-to-cart" onclick="addToCart('COMBO TRÀ SỮA PHA LIỀN +30 DẢI BÒ', 300000, 'tra-sua-dai-bo.png')">Thêm vào giỏ hàng</button>
+            </div>
         </div>
         <div class="image-sp">
             <img src="image/tra-sua-nem-nuong.png" alt="sp1"><br>
             <p class="ndsp">COMBO TRÀ SỮA PHA LIỀN + 30 NEM NƯỚNG</p>
             <p class="ndsp">300.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('COMBO TRÀ SỮA PHA LIỀN + 30 NEM NƯỚNG', 300000, 'tra-sua-nem-nuong.png')">Thêm vào giỏ hàng</button>
         </div>
     </div>
     <div class="sanpham">
         <div class="image-sp">
             <img src="image/set-20-ts-pha-lien.png" alt="sp1"><br>
-            <p class="ndsp">Set 20 cốc trà sữa pha liền</p>
+            <p class="ndsp">SET 20 CỐC TRÀ SỮA PHA LIỀN</p>
             <p class="ndsp">30.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('SET 20 CỐC TRÀ SỮA PHA LIỀN', 30000, 'set-20-ts-pha-lien.png')">Thêm vào giỏ hàng</button>
         </div>
         <div class="image-sp">
             <img src="image/kho-bo.png" alt="sp1"><br>
-            <p class="ndsp">Khô bò sợi cay</p>
+            <p class="ndsp">KHÔ BÒ SỢI CAY</p>
             <p class="ndsp">50.000đ</p>
+            <button class="add-to-cart" onclick="addToCart('KHÔ BÒ SỢI CAY', 50000, 'kho-bo.png')">Thêm vào giỏ hàng</button>
         </div>
         <div class="image-sp">
             <img src="image/tra-sua-nem-nuong.png" alt="sp1"><br>
             <p class="ndsp">COMBO TRÀ SỮA PHA LIỀN + 30 NEM NƯỚNG</p>
             <p class="ndsp">300.000đ</p>
+            <button class="add-to-cart">Thêm vào giỏ hàng</button>
         </div>
     </div>
     <div id="back-to-top">
-        <a href="#header">
-            <img src="image/icon/1.1.png" alt="Trở lại đầu trang">
+        <a href="#header" class="fa-solid fa-arrow-up">
         </a>
     </div>
     <footer class="footer">
