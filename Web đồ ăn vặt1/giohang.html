@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web đồ ăn vặt</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles(LH).css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -16,12 +16,12 @@
     </div>
     <nav class="nav">
         <ul class="nav-menu">
-            <li><a href="">Trang Chủ</a></li>
+            <li><a href="Trang chủ.html">Trang Chủ</a></li>
             <li><a href="gioithieu.html">Giới Thiệu</a></li>
             <li class="dropdown">
                 <a href="sanpham.html">Sản Phẩm</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Combo Best Seller</a></li>
+                    <li><a href="combobestsaller.html">Combo Best Seller</a></li>
                     <li><a href="#">Combo Mix</a></li>
                     <li><a href="#">Combo Thịt Khô</a></li>
                     <li><a href="#">Combo Snack + Quẩy</a></li>
@@ -56,18 +56,41 @@
               </div>
             </div>
              <!-- Icon giỏ hàng -->
-              <div class="shopee-container">
+             <div class="shopee-container">
                 <div class="shopee-bar">
                     <button class="shopee-icon">
-                        <i><i class="fa-solid fa-cart-shopping"></i></i>
+                        <a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i>
+                        </a>
                     </button>
                 </div>
-
-              </div>
+            </div>
           </div>
     </div>
 </header>
+<div class="breadcrumb-section">
+    <h1>Giỏ Hàng</h1>
+    <div class="breadcrumb">
+        <a href="Trang chủ.html">Trang chủ</a>
+        <span>></span>
+        <a href="sanpham.html" class="current">Giỏ hàng</a>
+    </div>
+</div>
+<div class="container">
+    <!-- Hiển thị thông tin giỏ hàng -->
+    <div id="cart-summary">
+        <ul id="cart-items"></ul>
 
+        <!-- Tổng giá trị giỏ hàng -->
+        <p class="total">Tổng giá trị: <span id="total-price">0 VNĐ</span></p>
+
+        <!-- Button thanh toán -->
+        <a href="thanhtoan.html" class="checkout-btn">Thanh toán</a>
+    </div>
+</div>
+<div id="back-to-top">
+    <a href="#header" class="fa-solid fa-arrow-up">
+    </a>
+</div>
 <footer class="footer">
     <!--
     <div class="social-icons">
@@ -111,6 +134,75 @@
         <p>&copy; 2024 Web Đồ Ăn vặt. Được tạo bởi [Trà & Tuyên]</p>    
     </div>
 </footer>
-<script src="main.js"></script>
+<script>
+    // Lấy giỏ hàng từ localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartItemsList = document.getElementById('cart-items');
+const totalPriceElement = document.getElementById('total-price');
+
+// Hàm hiển thị các sản phẩm trong giỏ hàng
+function displayCart() {
+    cartItemsList.innerHTML = ''; // Xóa giỏ hàng cũ
+
+    // Tổng tiền của giỏ hàng
+    let totalPrice = 0;
+
+    cart.forEach((product, index) => {
+        let listItem = document.createElement('li');
+
+        // Hình ảnh sản phẩm và thông tin sản phẩm
+        listItem.innerHTML = `
+            <img src="image/${product.image}" alt="${product.name}">
+            <div class="item-details">
+                <div class="name">${product.name}</div>
+                <div class="price">${product.price.toLocaleString()} VNĐ</div>
+            </div>
+            <div class="item-actions">
+                <button class="fa-solid fa-trash" onclick="removeFromCart(${index})"></button>
+            </div>
+        `;
+        cartItemsList.appendChild(listItem);
+
+        // Cộng tổng giá trị
+        totalPrice += product.price;
+    });
+
+    // Hiển thị tổng giá trị giỏ hàng
+    totalPriceElement.textContent = `${totalPrice.toLocaleString()} VNĐ`;
+}
+
+// Hàm xóa sản phẩm khỏi giỏ hàng
+function removeFromCart(index) {
+    // Xóa sản phẩm tại vị trí index
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật giỏ hàng vào localStorage
+    displayCart(); // Hiển thị lại giỏ hàng
+}
+
+// Hiển thị giỏ hàng khi trang được tải
+displayCart();
+function addToCart(productName, productPrice, productImage) {
+let product = {
+name: productName,
+price: productPrice,
+image: productImage // Chắc chắn lưu tên đúng của hình ảnh
+};
+
+// Lấy giỏ hàng hiện tại từ localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Thêm sản phẩm vào giỏ
+cart.push(product);
+
+// Lưu giỏ hàng vào localStorage
+localStorage.setItem('cart', JSON.stringify(cart));
+
+// Cập nhật giỏ hàng hiển thị trên biểu tượng giỏ hàng
+updateCart();
+
+// Thông báo cho người dùng
+alert(productName + " đã được thêm vào giỏ hàng!");
+}
+</script>
 </body>
 </html>
