@@ -38,8 +38,6 @@ window.onresize = function(event) {
     reloadSlider();
 };
 
-
-
 //tim kiem
 function toggleSearch() {
     const searchBar = document.querySelector('.search-bar');
@@ -66,4 +64,63 @@ function toggleMenu() {
       menu.style.display = 'none';
     }
   });
+
+  let cart = [];
+
+  // Hàm thêm sản phẩm vào giỏ hàng
+  function addToCart(productName, productPrice, productImage) {
+      // Tạo đối tượng sản phẩm
+      let product = {
+          name: productName,
+          price: productPrice,
+          image: productImage
+      };
+  
+      // Lấy giỏ hàng hiện tại từ localStorage, nếu không có thì khởi tạo giỏ hàng mới
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      // Thêm sản phẩm vào giỏ hàng
+      cart.push(product);
+  
+      // Lưu giỏ hàng vào localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      // Cập nhật giỏ hàng hiển thị trên icon giỏ hàng
+      updateCart();
+  
+      // Hiển thị thông báo
+      showNotification(productName + " đã được thêm vào giỏ hàng!");
+  }
+  
+  // Hàm hiển thị thông báo
+  function showNotification(message) {
+      // Tìm hoặc tạo phần tử thông báo
+      let notification = document.getElementById('notification');
+      if (!notification) {
+          notification = document.createElement('div');
+          notification.id = 'notification';
+          document.body.appendChild(notification);
+      }
+  
+      // Đặt nội dung và hiển thị
+      notification.textContent = message;
+      notification.classList.add('show');
+  
+      // Ẩn thông báo sau 2 giây
+      setTimeout(() => {
+          notification.classList.remove('show');
+      }, 1000);
+  }
+  
+  // Hàm cập nhật giỏ hàng hiển thị trên biểu tượng giỏ hàng
+  function updateCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartCount = cart.length;
+      document.getElementById('cart-count').textContent = cartCount;
+  }
+  
+  // Cập nhật giỏ hàng khi trang được tải
+  window.onload = function() {
+      updateCart();
+  };
   
