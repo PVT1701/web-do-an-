@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập</title>
     <link rel="stylesheet" href="styles(dndk).css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -15,13 +16,13 @@
         </div>
         <nav class="nav">
             <ul class="nav-menu">
-                <li><a href="Trang chủ.html">Trang Chủ</a></li>
+                <li><a href="">Trang Chủ</a></li>
                 <li><a href="gioithieu.html">Giới Thiệu</a></li>
                 <li class="dropdown">
                     <a href="sanpham.html">Sản Phẩm</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Combo Best Seller</a></li>
-                        <li><a href="#">Combo Mix</a></li>
+                        <li><a href="combobestsaller.html">Combo Best Seller</a></li>
+                        <li><a href="subpage1.html">Combo Mix</a></li>
                         <li><a href="#">Combo Thịt Khô</a></li>
                         <li><a href="#">Combo Snack + Quẩy</a></li>
                         <li><a href="#">Các Sản Phẩm Lẻ</a></li>
@@ -32,7 +33,7 @@
                 <li><a href="lienhe.html">Liên Hệ</a></li>
             </ul>
         </nav>
-         <div class="header-icons">
+        <div class="header-icons">
             <div class="nav-container">
                 <!-- Icon tìm kiếm -->
                 <div class="search-bar">
@@ -55,17 +56,108 @@
                   </div>
                 </div>
                  <!-- Icon giỏ hàng -->
-                  <div class="shopee-container">
-                    <div class="shopee-bar">
-                        <button class="shopee-icon">
-                            <i><i class="fa-solid fa-cart-shopping"></i></i>
-                        </button>
+                 <div class="cart">
+                    <span><a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i></a></span> <!-- Biểu tượng giỏ hàng -->
+                    <div class="cart-count">0</div>
+                    <div class="cart-tooltip">
+                        Không có sản phẩm nào trong giỏ hàng.
                     </div>
-    
-                  </div>
+                </div>
               </div>
         </div>
     </header>
+    
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="image\slider_1.webp" alt="">
+            </div>
+            <div class="item">
+                <img src="image\slider_2.webp" alt="">
+            </div>
+            <div class="item">
+                <img src="image\slider_3.webp" alt="">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div><br><br><br><br>
+    <div class="abody">
+        <h1>VỀ CHÚNG TÔI</h1>
+    </div><br>
+    <div class="bbody">
+        <h4>Chào mừng bạn đến với Ăn Là Ghiền, trang web bán đồ ăn vặt hấp dẫn và đa dạng nhất hiện nay!
+            Tại đây, bạn sẽ tìm thấy một thế giới đầy màu sắc của các loại snack thơm ngon, từ bánh kẹo truyền 
+            thống đến những món ăn vặt độc đáo từ khắp nơi trên thế giới. Chúng tôi cam kết mang đến cho bạn 
+            những sản phẩm chất lượng cao, an toàn và ngon miệng, phù hợp với mọi sở thích. Với giao diện thân 
+            thiện và dễ sử dụng, bạn chỉ cần vài cú click chuột để có thể đặt hàng và nhận được đồ ăn vặt yêu 
+            thích ngay tại nhà. Hãy cùng khám phá và thưởng thức những hương vị tuyệt vời tại SnackLand ngay hôm nay!</h4>
+    </div><br><br><br>
+    <div class="logo-image">
+        <img src="image\icon\logo.png" alt="logo">
+    </div>
+    
+    <div class="icon-container">
+        <div class="icon-box">
+            <img src="image\icon\chatluong.png" alt="Quality Icon">
+            <p>CHẤT LƯỢNG TIN CẬY</p>
+        </div>
+        <div class="icon-box">
+            <img src="image\icon\huongtoikk.png" alt="Customer Orientation Icon">
+            <p>HƯỚNG ĐẾN KHÁCH HÀNG</p>
+        </div>
+        <div class="icon-box">
+            <img src="image\icon\doitra.png" alt="Return Policy Icon">
+            <p>CHÍNH SÁCH ĐỔI TRẢ</p>
+        </div>
+        <div class="icon-box">
+            <img src="image\icon\quatang.png" alt="Gift Icon">
+            <p>QUÀ TẶNG HẤP DẪN</p>
+        </div>
+    </div><br><br>
+    <div class="image-container">
+        <img src="image/nền1.png" alt="Ảnh mẫu">
+        <div class="overlay-text">
+            <h3>Hotline</h3>
+            <a href="tel:0789395327"><h2>0789395327</h2></a>
+            <h4>Chúng tôi cam kết 100% các sản phẩm có nguồn gốc xuất xứ rõ ràng,</h4>
+            <h4>sạch sẽ, an toàn và đảm bảo chất lượng ngon nhất.</h4>
+        </div>
+    </div><br><br>
+    <div class="abody">
+    <h1>SẢN PHẨM NỔI BẬT</h1>
+    </div><br>
+    <div class="sanpham">
+        <div class="image-sp">
+            <img src="image/best12.png" alt="sp1"><br>
+            <p class="ndsp">COMBO KHÔNG THỂ CẢN PHÁ</p>
+            <p class="ndsp">259.000đ</p>
+        </div>
+        <div class="image-sp">
+            <img src="image/best14.png" alt="sp1"><br>
+            <p class="ndsp">COMBO GIẢI PHÓNG</p>
+            <p class="ndsp">199.000đ</p>
+        </div>
+        <div class="image-sp">
+            <img src="image/best15.png" alt="sp1"><br>
+            <p class="ndsp">COMBO ĐỈNH NÓC KỊCH TRẦN</p>
+            <p class="ndsp">199.000đ</p>
+        </div>
+    </div>
+    <div class="abody">
+        <a href="sanpham.html"><button class="add-to-cart">Xem thêm</button></a>
+    </div><br><br>
+    <div id="back-to-top">
+        <a href="#header" class="fa-solid fa-arrow-up">
+        </a>
+    </div>
     <footer class="footer">
         <!--
         <div class="social-icons">
@@ -95,7 +187,7 @@
                 <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
                 <div class="contact-item">
                     <img src="image\icon\icon-address.png" alt="Location Icon">
-                    <a href="">Thái Bình</a>
+                    Thái Bình
                 </div>
                 <div class="contact-item">
                     <img src="image\icon\icon-smart.png" alt="Phone Icon">
@@ -106,10 +198,55 @@
                     <a href="mailto:pvtzzz1701@gmail.com">anlaghien8386@gmail.com</a>
                 </div>
             </div>
-            <p>&copy; 2024 Web Đồ Ăn vặt. Được tạo bởi [Trà & Tuyên]</p>          
+            <p>&copy; 2024 Web Đồ Ăn vặt. Được tạo bởi [Trà & Tuyên]</p>    
         </div>
-            
     </footer>
+    <div class="modal"> 
+        <div class="modal_overlay"></div>
+        <div class="modal_body">
+            <div class="modal_inner">
+                <div class="auth_form">
+                    <div class="auth_form_container">
+                        <div class="auth_form_head">
+                            <h3 class="auth_form_dk">Đăng Nhập</h3>
+                            <a href="dangky.html"><span class="auth_form_dn">Đăng Ký</span></a>
+                            
+                        </div>
+    
+                        <div class="auth_form1">
+                            <div class="auth_form_group">
+                                <input type="text" class="auth_form_input" placeholder="Nhập tài khoản">
+                            </div>
+                            <div class="auth_form_group">
+                                <input type="text" class="auth_form_input" placeholder="Nhập mật khẩu">
+                            </div>
+                        </div>
+                        <div class="auth_form_aside">
+                            <p class="auth_form_policy_text">
+                                Bằng việc đăng ký, bạn đã đồng ý với Shop về
+                                <a>Điều khoản dịch vụ</a> và <a>Chính sách bảo mật</a>
+                            </p>
+                        </div>
+        
+                        <div class="auth_form_controls">
+                            <button class="btn" onclick="quaylai()">Quay Lại</button>
+                            <button class="btn btn--primary" onclick="dangnhap()">Đăng Nhập</button>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
+    <script>
+        function quaylai(){
+            location.assign("Trang chủ.html")
+        }
+        function dangnhap(){
+            location.assign("Trang chủ.html")
+        }
+    </script>   
 </body>
 </html>
