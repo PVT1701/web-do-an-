@@ -535,38 +535,49 @@ button:hover {
 }
 
 /*---css icon giỏ hàng---*/
-.cart-container {
-    width: 300px;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.cart-header {
+.nav-icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 15px;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #ddd;
+    gap: 15px; /* Khoảng cách đều giữa các biểu tượng */
+    padding: 10px;
 }
 
-.icon {
-    font-size: 18px;
-}
-
+/* Biểu tượng giỏ hàng */
 .cart {
     position: relative;
-    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #e0e0e0;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.cart-count {
+.cart:hover {
+    background: linear-gradient(to right, #ff7e5f, #ff5722);
+    border-color: #ff4500;
+    transform: scale(1.1);
+}
+
+.cart i {
+    font-size: 22px; /* Điều chỉnh kích thước biểu tượng */
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.cart:hover i {
+    background: linear-gradient(to right, #ff7e5f, #ff5722); /* Màu biểu tượng trắng khi hover */
+}
+/* Số lượng trong giỏ hàng */
+#cart-count {
     position: absolute;
-    top: -5px;
-    right: -10px;
+    top: -10px;  /* Đưa số lên cao hơn một chút */
+    right: -5px; /* Giữ vị trí ngang */
     background-color: #ff4b4b;
     color: white;
     font-size: 12px;
@@ -577,14 +588,17 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
+/* Tooltip thông báo */
 .cart-tooltip {
     position: absolute;
-    bottom: 120%;
-    right: -50%;
+    top: 120%;  /* Đưa tooltip lên trên */
+    left: 50%;   /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%);  /* Căn chỉnh chính xác */
     width: 220px;
-    background-color: #fff;
+    background-color: #f8f8f8;
     color: #333;
     font-size: 14px;
     padding: 10px;
@@ -594,10 +608,25 @@ button:hover {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10;
+    z-index: 9999;
 }
 
 .cart:hover .cart-tooltip {
     opacity: 1;
     visibility: visible;
 }
+
+.cart-tooltip.empty {
+    color: #888;
+}
+
+
+.cart:hover .cart-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-tooltip.empty {
+    color: #888;
+}
+

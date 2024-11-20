@@ -67,60 +67,78 @@ function toggleMenu() {
 
   let cart = [];
 
-  // Hàm thêm sản phẩm vào giỏ hàng
-  function addToCart(productName, productPrice, productImage) {
-      // Tạo đối tượng sản phẩm
-      let product = {
-          name: productName,
-          price: productPrice,
-          image: productImage
-      };
-  
-      // Lấy giỏ hàng hiện tại từ localStorage, nếu không có thì khởi tạo giỏ hàng mới
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-      // Thêm sản phẩm vào giỏ hàng
-      cart.push(product);
-  
-      // Lưu giỏ hàng vào localStorage
-      localStorage.setItem('cart', JSON.stringify(cart));
-  
-      // Cập nhật giỏ hàng hiển thị trên icon giỏ hàng
-      updateCart();
-  
-      // Hiển thị thông báo
-      showNotification(productName + " đã được thêm vào giỏ hàng!");
-  }
-  
-  // Hàm hiển thị thông báo
-  function showNotification(message) {
-      // Tìm hoặc tạo phần tử thông báo
-      let notification = document.getElementById('notification');
-      if (!notification) {
-          notification = document.createElement('div');
-          notification.id = 'notification';
-          document.body.appendChild(notification);
-      }
-  
-      // Đặt nội dung và hiển thị
-      notification.textContent = message;
-      notification.classList.add('show');
-  
-      // Ẩn thông báo sau 2 giây
-      setTimeout(() => {
-          notification.classList.remove('show');
-      }, 1000);
-  }
-  
-  // Hàm cập nhật giỏ hàng hiển thị trên biểu tượng giỏ hàng
-  function updateCart() {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const cartCount = cart.length;
-      document.getElementById('cart-count').textContent = cartCount;
-  }
-  
-  // Cập nhật giỏ hàng khi trang được tải
-  window.onload = function() {
-      updateCart();
-  };
-  
+// Hàm thêm sản phẩm vào giỏ hàng
+function addToCart(productName, productPrice, productImage) {
+    // Tạo đối tượng sản phẩm
+    let product = {
+        name: productName,
+        price: productPrice,
+        image: productImage
+    };
+
+    // Lấy giỏ hàng hiện tại từ localStorage, nếu không có thì khởi tạo giỏ hàng mới
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Thêm sản phẩm vào giỏ hàng
+    cart.push(product);
+
+    // Lưu giỏ hàng vào localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Cập nhật giỏ hàng hiển thị trên icon giỏ hàng
+    updateCart();  // Hàm này sẽ sử dụng số lượng sản phẩm trong giỏ hàng để cập nhật
+
+    // Hiển thị thông báo
+    showNotification(productName + " đã được thêm vào giỏ hàng!");
+}
+
+// Hàm hiển thị thông báo
+function showNotification(message) {
+    // Tìm hoặc tạo phần tử thông báo
+    let notification = document.getElementById('notification');
+    if (!notification) {
+        notification = document.createElement('div');
+        notification.id = 'notification';
+        document.body.appendChild(notification);
+    }
+
+    // Đặt nội dung và hiển thị
+    notification.textContent = message;
+    notification.classList.add('show');
+
+    // Ẩn thông báo sau 2 giây
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 1000);
+}
+
+// Hàm cập nhật giỏ hàng hiển thị trên biểu tượng giỏ hàng
+function updateCart() {
+    // Lấy giỏ hàng từ localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Cập nhật số lượng sản phẩm trong giỏ
+    const cartCount = cart.length;
+    document.getElementById('cart-count').textContent = cartCount;
+
+    // Cập nhật tooltip dựa trên số lượng sản phẩm trong giỏ
+    updateCartCount(cartCount);
+}
+
+// Hàm cập nhật thông báo giỏ hàng
+function updateCartCount(count) {
+    const cartTooltip = document.querySelector('.cart-tooltip');
+    
+    if (count > 0) {
+        cartTooltip.textContent = "Có sản phẩm trong giỏ hàng.";  // Thông báo có sản phẩm
+        cartTooltip.classList.remove('empty');  // Loại bỏ lớp "empty" khi có sản phẩm
+    } else {
+        cartTooltip.textContent = "Không có sản phẩm nào trong giỏ hàng.";  // Thông báo giỏ trống
+        cartTooltip.classList.add('empty');  // Thêm lớp "empty" khi giỏ trống
+    }
+}
+
+// Cập nhật giỏ hàng khi trang được tải
+window.onload = function() {
+    updateCart();  // Cập nhật giỏ hàng khi trang được tải
+};

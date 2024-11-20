@@ -807,3 +807,98 @@ button:hover {
     opacity: 1;
     visibility: visible;
 }
+.nav-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Khoảng cách đều giữa các biểu tượng */
+    padding: 10px;
+}
+
+/* Biểu tượng giỏ hàng */
+.cart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cart:hover {
+    background: linear-gradient(to right, #ff7e5f, #ff5722);
+    border-color: #ff4500;
+    transform: scale(1.1);
+}
+
+.cart i {
+    font-size: 22px; /* Điều chỉnh kích thước biểu tượng */
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.cart:hover i {
+    background: linear-gradient(to right, #ff7e5f, #ff5722); /* Màu biểu tượng trắng khi hover */
+}
+/* Số lượng trong giỏ hàng */
+#cart-count {
+    position: absolute;
+    top: -10px;  /* Đưa số lên cao hơn một chút */
+    right: -5px; /* Giữ vị trí ngang */
+    background-color: #ff4b4b;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Tooltip thông báo */
+.cart-tooltip {
+    position: absolute;
+    top: 120%;  /* Đưa tooltip lên trên */
+    left: 50%;   /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%);  /* Căn chỉnh chính xác */
+    width: 220px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+}
+
+.cart:hover .cart-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-tooltip.empty {
+    color: #888;
+}
+
+
+.cart:hover .cart-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-tooltip.empty {
+    color: #888;
+}
+
