@@ -823,12 +823,13 @@ button:hover {
     align-items: center;
     width: 45px;
     height: 45px;
-    background-color: #fff;
+    background-color: #fdf3e7;
     border-radius: 5px;
-    border: 2px solid #e0e0e0;
+    border: 0px solid #fdf3e7;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 
 .cart:hover {
     background: linear-gradient(to right, #ff7e5f, #ff5722);

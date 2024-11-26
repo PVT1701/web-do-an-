@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị Website</title>
+    <!-- Thêm CSS cho DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="admincss.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Quản Trị</h2>
+            <ul>
+                <li><a href="Trang chủ.html">Trang Chủ</a></li>
+                <li><a href="#">Thống Kê</a></li>
+                <li><a href="#">Báo Cáo</a></li>
+                <li><a href="#">Người Dùng</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="top-nav">
+                <h1>Bảng Điều Khiển</h1>
+                <button id="mode-toggle">🌙</button>
+            </div>
+            <div class="charts">
+                <div class="chart" id="chart1"></div>
+                <div class="chart" id="chart2"></div>
+            </div>
+            <div class="table-container">
+                <h2>Dữ Liệu Người Dùng</h2>
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Email</th>
+                            <th>Vai Trò</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Ngô Đăng Tuyên</td><td>ngodangtuyentb78@gmail.com</td><td>Admin</td></tr>
+                        <tr><td>2</td><td>Phan Văn Trà</td><td>pvtzzz1701@gmail.com</td><td>Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="java.js"></script>
+    <script>
+        // Lấy nút chuyển đổi chế độ và body
+const toggleButton = document.getElementById('mode-toggle');
+const body = document.body;
+
+// Kiểm tra chế độ hiện tại và lưu trạng thái trong localStorage
+if (localStorage.getItem('mode') === 'dark') {
+    body.classList.add('dark-mode');
+} else {
+    body.classList.add('light-mode');
+}
+
+// Thêm sự kiện click để chuyển đổi chế độ
+toggleButton.addEventListener('click', () => {
+    if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('mode', 'dark');
+    } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        localStorage.setItem('mode', 'light');
+    }
+});
+
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <title>Web đồ ăn vặt</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
 
@@ -200,7 +201,34 @@
         <p>&copy; 2024 Web Đồ Ăn vặt. Được tạo bởi [Trà & Tuyên]</p>    
     </div>
 </footer>
+<script>
+    const sql = require('mssql');
 
+const config = {
+    user: 'TenUser',
+    password: 'MatKhau',
+    server: 'PVT\PVTMASTER', // Tên server hoặc IP
+    database: 'QLSHOPDOANVAT',
+};
+
+async function connectDB() {
+    try {
+        let pool = await sql.connect(config);
+        let result = await pool.request().query('SELECT * FROM TaiKhoan');
+        console.log(result.recordset);
+
+        // Hiển thị dữ liệu (có thể dùng kết hợp HTML)
+        result.recordset.forEach(row => {
+            console.log(row.TenCot);
+        });
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+connectDB();
+
+</script>
 <script src="main.js"></script>
 </body>
 </html>
