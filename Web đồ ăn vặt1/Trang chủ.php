@@ -51,7 +51,7 @@
                   <i class="fa-solid fa-user"></i>
                 </button>
                 <ul class="user-menu">
-                  <li><a href="dangnhap.html">Đăng Nhập</a></li>
+                  <li><a href="dangnhap.php">Đăng Nhập</a></li>
                   <li><a href="dangky.html">Đăng Ký</a></li>
                 </ul>        
               </div>
