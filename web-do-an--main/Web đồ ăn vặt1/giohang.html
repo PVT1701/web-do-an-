@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web đồ ăn vặt</title>
+    <link rel="stylesheet" href="styles(LH).css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="image\icon\logo.png" alt="Logo">
+        <span></span>
+    </div>
+    <nav class="nav">
+        <ul class="nav-menu">
+            <li><a href="Trang chủ.html">Trang Chủ</a></li>
+            <li><a href="gioithieu.html">Giới Thiệu</a></li>
+            <li class="dropdown">
+                <a href="sanpham.html">Sản Phẩm</a>
+                <ul class="dropdown-menu">
+                    <li><a href="combobestsaller.html">Combo Best Seller</a></li>
+                    <li><a href="subpage1.html">Combo Mix</a></li>
+                    <li><a href="#">Combo Thịt Khô</a></li>
+                    <li><a href="#">Combo Snack + Quẩy</a></li>
+                    <li><a href="#">Các Sản Phẩm Lẻ</a></li>
+                    <li><a href="#">Sản Phẩm Mới</a></li>
+                </ul>
+            </li>
+            <li><a href="tintuc.html">Tin Tức</a></li>
+            <li><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
+    </nav>
+    <div class="header-icons">
+        <div class="nav-container">
+            <!-- Icon tìm kiếm -->
+            <div class="search-bar">
+              <button class="search-icon" onclick="toggleSearch()">
+                <i class="fa-solid fa-search"></i>
+              </button>
+              <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            </div>
+        
+            <!-- Icon người dùng -->
+            <div class="user-container">
+              <div class="user-bar">
+                <button class="user-icon" onclick="toggleMenu()">
+                  <i class="fa-solid fa-user"></i>
+                </button>
+                <ul class="user-menu">
+                  <li><a href="dangnhap.html">Đăng Nhập</a></li>
+                  <li><a href="dangky.html">Đăng Ký</a></li>
+                </ul>        
+              </div>
+            </div>
+             <!-- Icon giỏ hàng -->
+             <div class="cart">
+                <span><a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i></a></span> <!-- Biểu tượng giỏ hàng -->
+                <div id="cart-count"></div>
+                <div class="cart-tooltip" id="cart-tooltip">
+                </div>
+            </div>
+          </div>
+    </div>
+</header>
+<div class="breadcrumb-section">
+    <h1>Giỏ Hàng</h1>
+    <div class="breadcrumb">
+        <a href="Trang chủ.html">Trang chủ</a>
+        <span>></span>
+        <a href="sanpham.html" class="current">Giỏ hàng</a>
+    </div>
+</div>
+<div class="container">
+    <!-- Hiển thị thông tin giỏ hàng -->
+    <div id="cart-summary">
+        <ul id="cart-items"></ul>
+
+        <!-- Tổng giá trị giỏ hàng -->
+        <p class="total">Tổng giá trị: <span id="total-price">0 VNĐ</span></p>
+
+        <!-- Button thanh toán -->
+        <a href="thanhtoan.html" class="checkout-btn">Thanh toán</a>
+    </div>
+</div>
+<div id="back-to-top">
+    <a href="#header" class="fa-solid fa-arrow-up">
+    </a>
+</div>
+<footer class="footer">
+    <!--
+    <div class="social-icons">
+        <img src="path/to/facebook-icon.png" alt="Facebook">
+        <img src="path/to/tiktok-icon.png" alt="TikTok">
+        <img src="path/to/youtube-icon.png" alt="YouTube">
+        <img src="path/to/shopee-icon.png" alt="Shopee">
+        <img src="path/to/instagram-icon.png" alt="Instagram">
+    </div>-->
+
+    <div class="footer-links">
+        <div>
+            <h4>THỰC PHẨM TỐT NHẤT</h4>
+            <a href="#">Chi nhánh</a><br>
+            <a href="#">Hợp tác</a><br>
+            <a href="#">Sự kiện</a>
+        </div>
+        <div>
+            <h4>TIN TỨC</h4>
+            <a href="#">Về chúng tôi</a><br>
+            <a href="#">Liên hệ chúng tôi</a><br>
+            <a href="#">Đăng nhập</a><br>
+            <a href="#">Đăng ký</a><br>
+            <a href="#">Câu hỏi thường gặp</a>
+        </div>
+        <div>
+            <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
+            <div class="contact-item">
+                <img src="image\icon\icon-address.png" alt="Location Icon">
+                <a href="">Thái Bình</a>
+            </div>
+            <div class="contact-item">
+                <img src="image\icon\icon-smart.png" alt="Phone Icon">
+                <a href="tel:0789395327">0789395327</a>
+            </div>
+            <div class="contact-item">
+                <img src="image\icon\icon-email.png" alt="Email Icon">
+                <a href="mailto:pvtzzz1701@gmail.com">anlaghien8386@gmail.com</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Web Đồ Ăn vặt. Được tạo bởi [Trà & Tuyên]</p>    
+    </div>
+</footer>
+<script>
+    // Lấy giỏ hàng từ localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartItemsList = document.getElementById('cart-items');
+const totalPriceElement = document.getElementById('total-price');
+
+// Hàm hiển thị các sản phẩm trong giỏ hàng
+function displayCart() {
+    cartItemsList.innerHTML = ''; // Xóa giỏ hàng cũ
+
+    // Tổng tiền của giỏ hàng
+    let totalPrice = 0;
+
+    cart.forEach((product, index) => {
+        let listItem = document.createElement('li');
+
+        // Hình ảnh sản phẩm và thông tin sản phẩm
+        listItem.innerHTML = `
+            <img src="image/${product.image}" alt="${product.name}">
+            <div class="item-details">
+                <div class="name">${product.name}</div>
+                <div class="price">${product.price.toLocaleString()} VNĐ</div>
+            </div>
+            <div class="item-actions">
+                <button class="fa-solid fa-trash" onclick="removeFromCart(${index})"></button>
+            </div>
+        `;
+        cartItemsList.appendChild(listItem);
+
+        // Cộng tổng giá trị
+        totalPrice += product.price;
+    });
+
+    // Hiển thị tổng giá trị giỏ hàng
+    totalPriceElement.textContent = `${totalPrice.toLocaleString()} VNĐ`;
+}
+
+// Hàm xóa sản phẩm khỏi giỏ hàng
+function removeFromCart(index) {
+    // Xóa sản phẩm tại vị trí index
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật giỏ hàng vào localStorage
+    displayCart(); // Hiển thị lại giỏ hàng
+}
+
+// Hiển thị giỏ hàng khi trang được tải
+displayCart();
+function addToCart(productName, productPrice, productImage) {
+let product = {
+name: productName,
+price: productPrice,
+image: productImage // Chắc chắn lưu tên đúng của hình ảnh
+};
+
+// Lấy giỏ hàng hiện tại từ localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Thêm sản phẩm vào giỏ
+cart.push(product);
+
+// Lưu giỏ hàng vào localStorage
+localStorage.setItem('cart', JSON.stringify(cart));
+
+// Cập nhật giỏ hàng hiển thị trên biểu tượng giỏ hàng
+updateCart();
+
+// Thông báo cho người dùng
+alert(productName + " đã được thêm vào giỏ hàng!");
+}
+</script>
+</body>
+</html>
